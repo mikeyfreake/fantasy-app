@@ -59,14 +59,14 @@
 					<span class="icon-bar"></span> 
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">PPFFL</a>
+				<a class="navbar-brand" href="#home">PPFFL</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="/powerrankings.html">Power Rankings</a></li>
-					<li><a href="#contact">Champions</a></li>
-					<li><a href="#">Stats</a></li>
+					<li class="active"><a href="#home">Home</a></li>
+					<li><a href="#powerrankings">Power Rankings</a></li>
+					<li><a href="#champions">Champions</a></li>
+					<li><a href="#stats">Stats</a></li>
 					<!-- <li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -85,62 +85,7 @@
 		</div>
 	</nav>
 
-	<div class="container theme-showcase" role="main" style="margin-top: 60px">
-
-		<div class="row">
-			<img alt="Pasadena Pirates Fantasy Football League" class="img-responsive center-block" src="/images/ppffl_logo.png">
-		</div>
-		
-		<hr>
-		
-		<div class="row">
-			<div class="col-md-4">
-				<h2>Power Rankings</h2>
-				<p>View the Commish's weekly power rankings.</p>
-				<p>
-					<a class="btn btn-primary" href="/powerrankings.html" role="button">Power Rankings &raquo;</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h2>Champions - TODO</h2>
-				<p>List of PPFFL champions by year.</p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View Champions &raquo;</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h2>Statistics - TODO</h2>
-				<p>Year end stats for each year the league has existed.</p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View Stats &raquo;</a>
-				</p>
-			</div>
-		</div>
-		
-		<!-- mount point -->
-<my-tag></my-tag>
-
-<!-- inlined tag definition -->
-<script type="riot/tag">
-  <my-tag>
-    <h3>Tag layout</h3>
-    <inner-tag />
-  </my-tag>
-</script>
-
-<!-- <inner-tag/> is specified on external file 
-<script src="path/to/javascript/with-tags.js" type="riot/tag"></script>-->
-
-<!-- include riot.js and the compiler -->
-<script src="https://cdn.jsdelivr.net/riot/2.6/riot+compiler.min.js"></script>
-
-
-<!-- mount normally -->
-<script>
-riot.mount('*')
-</script>
-
-	</div>
+	<div id="content" class="container theme-showcase" role="main" style="margin-top: 60px"></div>
 	<!-- /container -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -151,5 +96,32 @@ riot.mount('*')
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous"></script>
+		
+	<!-- include riot.js and the compiler -->
+	<script src="https://cdn.jsdelivr.net/riot/2.6/riot+compiler.min.js"></script>
+		
+	<!-- <inner-tag/> is specified on external file -->
+	<script src="/js/champions/champion-list.tag" type="riot/tag"></script>
+	<script src="/js/home/home-page.tag" type="riot/tag"></script>
+	<script src="/js/not-found-page.tag" type="riot/tag"></script>
+	
+	<!-- set up the router -->
+	<script src="/js/routes.js"></script>
+	
+	<!-- mount normally -->
+	<script>
+	var tags = riot.mount('*');
+	riot.route.start();
+	riot.route.exec();
+	
+	//Update the links as they are clicked.
+	$('.navbar li').click(function(e) {
+	    $('.navbar li.active').removeClass('active');
+	    var $this = $(this);
+	    if (!$this.hasClass('active')) {
+	        $this.addClass('active');
+	    }
+	});
+	</script>
 </body>
 </html>
