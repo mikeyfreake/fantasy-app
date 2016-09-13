@@ -6,7 +6,13 @@ var routes = {
 		mount('home-page');
 	},
 	champions: function(id, action) {
-		mount('champion-list');
+		mount('champions-page');
+	},
+	rankings: function(id, action) {
+		mount('rankings-page');
+	},
+	stats: function(id, action) {
+		mount('stats-page');
 	}
 };
 
@@ -19,10 +25,7 @@ function mount(tag, options) {
 
 function handler(collection, id, action) {
   var fn = routes[collection || 'home'];
-  if (fn)
-	  fn(id, action) 
-  else
-	  mount('not-found-page');
+  fn ? fn(id, action) : mount('not-found-page');
 }
 
 riot.route(handler);
