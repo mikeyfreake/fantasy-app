@@ -1,0 +1,35 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+        #database-platform: io.github.mikeyfreake.myapp.domain.util.FixedH2Dialect
+        database: POSTGRESQL
+        show-sql: false
+        #properties:
+            #hibernate.cache.use_second_level_cache: true
+            #hibernate.cache.use_query_cache: false
+            #hibernate.generate_statistics: true #Set to false for PRD
+            #hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+    datasource:
+        url: jdbc:postgresql://localhost:5432/ppffl
+        name:
+        username: ppffl
+        password:
+    h2:
+        console:
+            enabled: false
