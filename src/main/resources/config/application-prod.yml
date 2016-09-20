@@ -27,7 +27,7 @@ spring:
             #hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
     datasource:
         url: jdbc:postgresql://localhost:5432/ppffl
-        driverClassName: org.postgresql.Driver
+        #driverClassName: org.postgresql.Driver
         #name:
-        #username: #vkoyhoafmbxvzr
-        #password:  #xideDU2wssmGbbzV48Q5gb07HV
+        username: ${DB_USER} #vkoyhoafmbxvzr
+        password: ${DB_PWD} #xideDU2wssmGbbzV48Q5gb07HV
