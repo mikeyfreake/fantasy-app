@@ -26,7 +26,7 @@ spring:
             #hibernate.generate_statistics: true #Set to false for PRD
             #hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
     datasource:
-        url: jdbc:${DATABASE_URL} #jdbc:postgresql://localhost:5432/ppffl
+        url: jdbc:postgresql://localhost:5432/ppffl
         #name:
         #username: #vkoyhoafmbxvzr
         #password:  #xideDU2wssmGbbzV48Q5gb07HV
