@@ -1,5 +1,3 @@
-'use strict'
-
 var currentTag = null;
 var routes = {
 	home: function(id, action) {
@@ -13,6 +11,9 @@ var routes = {
 	},
 	stats: function(id, action) {
 		mount('stats-page');
+	},
+	accounts: function(id, action) {
+		mount('login-page');
 	}
 };
 

@@ -17,7 +17,7 @@ spring:
         hibernate:
             ddl-auto: update
             naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
-        #database-platform: io.github.mikeyfreake.myapp.domain.util.FixedH2Dialect
+        #database-platform: io.github.mikeyfreake.myapp.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
         show-sql: false
         #properties:
@@ -26,8 +26,4 @@ spring:
             #hibernate.generate_statistics: true #Set to false for PRD
             #hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
     datasource:
-        url: ${JDBC_DATABASE_URL} #jdbc:postgresql://localhost:5432/ppffl
-        #driverClassName: org.postgresql.Driver
-        #name:
-        #username: #vkoyhoafmbxvzr
-        #password: #xideDU2wssmGbbzV48Q5gb07HV
+        url: ${JDBC_DATABASE_URL} #contains user name and password. Not listed in config vars as it is generated dynamically.
