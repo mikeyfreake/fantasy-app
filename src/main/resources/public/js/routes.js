@@ -12,7 +12,7 @@ var routes = {
 	stats: function(id, action) {
 		mount('stats-page');
 	},
-	accounts: function(id, action) {
+	login: function(id, action) {
 		mount('login-page');
 	}
 };

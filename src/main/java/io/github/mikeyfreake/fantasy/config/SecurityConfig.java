@@ -21,9 +21,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		http
-        	.authorizeRequests()
+			.csrf().disable() //TODO Correct this.	
+
+			.authorizeRequests()
             .antMatchers("/").permitAll()
-            .antMatchers("/api/**").authenticated()
+            .antMatchers("/api/**").permitAll()
+            //.antMatchers("/api/**").authenticated()
             //.anyRequest().authenticated()
         .and()
         	.formLogin()
@@ -38,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 	    auth
 	        .inMemoryAuthentication()
-	            .withUser("user").password("password").roles("USER");
+	            .withUser("user").password("password").roles("USER")
+	        .and().withUser("mikeyfreake@gmail.com").password("Openopen1").roles("USER");
 	}
 }
