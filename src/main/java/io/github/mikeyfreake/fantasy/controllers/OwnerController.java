@@ -17,7 +17,7 @@ import io.github.mikeyfreake.fantasy.domain.Owner;
 import io.github.mikeyfreake.fantasy.repository.OwnerRepository;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/owners")
 public class OwnerController {
 	
 	private final Logger log = LoggerFactory.getLogger(OwnerController.class);
@@ -25,7 +25,7 @@ public class OwnerController {
 	@Inject
 	private OwnerRepository ownerRepo;
 	
-	@RequestMapping("/owners/{id}")
+	@RequestMapping("/{id}")
     public ResponseEntity<Owner> getOwner(@PathVariable Long id) {
 		log.debug("REST request to get Owner : {}", id);
 		Owner owner = ownerRepo.findOne(id);
@@ -36,7 +36,7 @@ public class OwnerController {
                     .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 	
-	@RequestMapping("/owners")
+	@RequestMapping("")
 	public List<Owner> getAllOwners() {
 		log.debug("REST request to get all Owners");
 		return ownerRepo.findAll();
