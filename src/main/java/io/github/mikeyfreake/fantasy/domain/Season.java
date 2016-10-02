@@ -29,7 +29,7 @@ public class Season {
 	private League league;
 	
 	@OneToOne
-	private Team champion;
+	private Set<TrophyWinner> throphyWinners;
 
 	public Long getId() {
 		return id;
@@ -71,12 +71,12 @@ public class Season {
 		this.league = league;
 	}
 
-	public Team getChampion() {
-		return champion;
+	public Set<TrophyWinner> getThrophyWinners() {
+		return throphyWinners;
 	}
 
-	public void setChampion(Team champion) {
-		this.champion = champion;
+	public void setThrophyWinners(Set<TrophyWinner> throphyWinners) {
+		this.throphyWinners = throphyWinners;
 	}
 	
 }

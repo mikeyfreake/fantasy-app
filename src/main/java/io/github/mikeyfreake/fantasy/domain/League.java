@@ -22,6 +22,9 @@ public class League {
 	
 	@OneToMany
 	private Set<Team> teams;
+	
+	@OneToMany
+	private Set<Trophy> throphies;
 
 	public Long getId() {
 		return id;
@@ -45,6 +48,22 @@ public class League {
 
 	public void setSeasons(Set<Season> seasons) {
 		this.seasons = seasons;
+	}
+
+	public Set<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(Set<Team> teams) {
+		this.teams = teams;
+	}
+
+	public Set<Trophy> getThrophies() {
+		return throphies;
+	}
+
+	public void setThrophies(Set<Trophy> throphies) {
+		this.throphies = throphies;
 	}
 	
 }

@@ -1,71 +1,11 @@
 package io.github.mikeyfreake.fantasy.domain;
 
-<<<<<<< HEAD
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
-@Entity
-public class PowerRanking {
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	
-	private Integer week;
-	private Integer rank;
-	private String comments;
-	
-	@OneToOne
-	private Team team;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Integer getWeek() {
-		return week;
-	}
-
-	public void setWeek(Integer week) {
-		this.week = week;
-	}
-
-	public Integer getRank() {
-		return rank;
-	}
-
-	public void setRank(Integer rank) {
-		this.rank = rank;
-	}
-
-	public String getComments() {
-		return comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
-
-	public Team getTeam() {
-		return team;
-	}
-
-	public void setTeam(Team team) {
-		this.team = team;
-=======
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -79,7 +19,7 @@ public class PowerRanking {
 	
 	private Integer ranking;
 	
-	@ManyToOne
+	@OneToOne
 	private Team team;
 	
 	@Size(max=1000)
@@ -87,13 +27,6 @@ public class PowerRanking {
 	private String comments;
 	
 	public PowerRanking(){}
-	
-	public PowerRanking(Integer week, Integer ranking, Team team, String comments) {
-		this.week = week;
-		this.ranking = ranking;
-		this.team = team;
-		this.comments = comments;
-	}
 
 	public Long getId() {
 		return id;
@@ -133,7 +66,6 @@ public class PowerRanking {
 
 	public void setComments(String comments) {
 		this.comments = comments;
->>>>>>> branch 'master' of https://github.com/mikeyfreake/fantasy-app.git
 	}
 	
 }
