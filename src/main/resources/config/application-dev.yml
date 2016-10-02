@@ -15,7 +15,7 @@ spring:
     jpa:
         open-in-view: false
         hibernate:
-            ddl-auto: update #none, create, create-drop, drop, update, validate
+            ddl-auto: create-drop #none, create, create-drop, drop, update, validate
             naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
         #database-platform: io.github.mikeyfreake.myapp.domain.util.FixedH2Dialect
         database: H2

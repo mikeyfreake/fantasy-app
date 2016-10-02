@@ -13,7 +13,7 @@ public class Owner {
 	private Long id;
 	private String name;
 	
-	protected Owner(){}
+	public Owner(){}
 	
 	public Owner(String name){
 		this.setName(name);

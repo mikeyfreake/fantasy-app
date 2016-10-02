@@ -17,7 +17,7 @@ public class Team {
 	private String name;
 	
 	@OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn
 	private Owner owner;
 	
 	public Team(String name, Owner owner) {
