@@ -20,6 +20,8 @@ public class Team {
     @JoinColumn
 	private Owner owner;
 	
+	public Team(){}
+	
 	public Team(String name, Owner owner) {
 		this.name = name;
 		this.owner = owner;
@@ -49,5 +51,8 @@ public class Team {
 		this.owner = owner;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Team [id=" + id + ", name=" + name + ", owner=" + owner + "]";
+	}
 }
