@@ -17,7 +17,7 @@ import io.github.mikeyfreake.fantasy.domain.Team;
 import io.github.mikeyfreake.fantasy.repository.TeamRepository;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/teams")
 public class TeamController {
 	
 	private final Logger log = LoggerFactory.getLogger(TeamController.class);
@@ -25,7 +25,7 @@ public class TeamController {
 	@Inject
 	private TeamRepository teamRepo;
 	
-	@RequestMapping("/teams/{id}")
+	@RequestMapping("/{id}")
     public ResponseEntity<Team> getTeam(@PathVariable Long id) {
 		log.debug("REST request to get Team : {}", id);
 		Team team = teamRepo.findOne(id);
@@ -36,7 +36,7 @@ public class TeamController {
                     .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 	
-	@RequestMapping("/teams")
+	@RequestMapping("")
 	public List<Team> getAllTeams() {
 		log.debug("REST request to get all Teams");
 		return teamRepo.findAll();

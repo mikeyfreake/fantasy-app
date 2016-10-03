@@ -26,8 +26,8 @@
 		var params = {username: this.inputEmail.value, password: this.inputPassword.value};
 		$.post('/login', params, function(json) {
 		    console.log("JSON response received:\n" + json);
-		    $('#authenticated-menu').removeClass('hidden');
-		    $('#unauthenticated-menu').addClass('hidden');
+		    $('.authenticated-menu').removeClass('hidden');
+		    $('.unauthenticated-menu').addClass('hidden');
 		})
 	}
 	</script>

@@ -28,8 +28,8 @@ public class Season {
 	@ManyToOne
 	private League league;
 	
-	@OneToOne
-	private Set<TrophyWinner> throphyWinners;
+	@OneToMany
+	private Set<TrophyWinner> trophyWinners;
 
 	public Long getId() {
 		return id;
@@ -72,11 +72,11 @@ public class Season {
 	}
 
 	public Set<TrophyWinner> getThrophyWinners() {
-		return throphyWinners;
+		return trophyWinners;
 	}
 
 	public void setThrophyWinners(Set<TrophyWinner> throphyWinners) {
-		this.throphyWinners = throphyWinners;
+		this.trophyWinners = throphyWinners;
 	}
 	
 }
